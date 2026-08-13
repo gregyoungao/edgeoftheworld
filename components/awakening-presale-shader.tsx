@@ -179,7 +179,7 @@ vec3 hueRotate(vec3 col, float a) {
 vec3 shade(vec2 uv, vec2 p, float t) {
   // Bias the vertical position with a <1 exponent so the warm colours (cream/
   // orange) reach further down the screen, leaving less pure purple at the base.
-  float biased = pow(clamp(uv.y, 0.0, 1.0), 0.62);
+  float biased = pow(clamp(uv.y, 0.0, 1.0), 0.24);
   float y = biased
     + sin(uv.x * (3.0 + u_intensity * 9.0) + t * 0.8) * 0.08
     + (fbm(p * 2.0 + t * 0.1) - 0.5) * u_intensity * 0.6;
