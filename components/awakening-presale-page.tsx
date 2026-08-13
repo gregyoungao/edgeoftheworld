@@ -56,7 +56,7 @@ export function AwakeningPresalePage() {
 
       {/* Status and widgets */}
       <footer className="relative z-10 flex flex-col items-center justify-center flex-1 gap-8 pt-8">
-        <p className="font-mono text-[#f4a460] text-lg md:text-xl tracking-wide text-center">
+        <p className="font-mono text-[#3d2f5c] text-lg md:text-xl tracking-wide text-center">
           TRANSMISSION DELIVERED
         </p>
         
