@@ -16,15 +16,37 @@ export function AwakeningPresalePage() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Play the Edge of the World game"
-        className="group fixed right-5 top-5 z-20 flex size-32 items-center justify-center overflow-hidden rounded-full border border-orange-200/50 bg-gradient-to-br from-[#b95724] via-[#8e351d] to-[#542017] shadow-xl shadow-[#542017]/30 transition-transform duration-300 hover:scale-105 md:right-8 md:top-8 md:size-40"
+        className="group fixed right-5 top-5 z-20 flex size-32 items-center justify-center overflow-hidden rounded-full border border-purple-200/60 bg-gradient-to-br from-[#a78bd8] via-[#6b4fa0] to-[#3d2f5c] shadow-xl shadow-[#3d2f5c]/40 transition-transform duration-300 animate-bounce-slow hover:scale-105 md:right-8 md:top-8 md:size-40"
       >
-        <span className="absolute inset-2 rounded-full border border-white/25" aria-hidden="true" />
-        <span className="absolute inset-0 flex items-center justify-center animate-spin-slow" aria-hidden="true">
-          <span className="max-w-[7rem] text-center font-mono text-[10px] font-semibold leading-[1.15] tracking-[0.16em] text-white md:max-w-[9rem] md:text-xs">
-            PLAY THE EDGE OF THE WORLD GAME
-          </span>
-        </span>
-        <span className="relative ml-1 border-y-[9px] border-y-transparent border-l-[14px] border-l-white transition-transform duration-300 group-hover:scale-110" aria-hidden="true" />
+        <span className="absolute inset-2 rounded-full border border-white/30" aria-hidden="true" />
+        <svg
+          viewBox="0 0 100 100"
+          className="absolute inset-0 h-full w-full animate-spin-slow"
+          aria-hidden="true"
+        >
+          <defs>
+            <path
+              id="edge-game-circle-path"
+              d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"
+              fill="none"
+            />
+          </defs>
+          <text
+            className="font-mono uppercase"
+            fontSize="11"
+            fontWeight="700"
+            letterSpacing="0.5"
+            fill="white"
+          >
+            <textPath href="#edge-game-circle-path" startOffset="0%">
+              PLAY THE EDGE OF THE WORLD GAME &#8226;
+            </textPath>
+          </text>
+        </svg>
+        <span
+          className="relative ml-1.5 border-y-[15px] border-y-transparent border-l-[24px] border-l-white drop-shadow-md transition-transform duration-300 group-hover:scale-110 md:border-y-[18px] md:border-l-[28px]"
+          aria-hidden="true"
+        />
       </a>
 
       {/* Title and buttons at top */}
