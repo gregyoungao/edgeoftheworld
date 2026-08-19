@@ -16,9 +16,8 @@ export function AwakeningPresalePage() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Play the Edge of the World game"
-        className="group fixed right-5 top-5 z-20 flex size-32 items-center justify-center overflow-hidden rounded-full border border-purple-200/60 bg-gradient-to-br from-[#a78bd8] via-[#6b4fa0] to-[#3d2f5c] shadow-xl shadow-[#3d2f5c]/40 transition-transform duration-300 animate-bounce-slow hover:scale-105 md:right-8 md:top-8 md:size-40"
+        className="group fixed right-5 top-5 z-20 flex size-32 items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-[#a78bd8] via-[#6b4fa0] to-[#3d2f5c] shadow-xl shadow-[#3d2f5c]/40 transition-transform duration-300 animate-bounce-slow hover:scale-105 md:right-8 md:top-8 md:size-40"
       >
-        <span className="absolute inset-2 rounded-full border border-white/30" aria-hidden="true" />
         <svg
           viewBox="0 0 100 100"
           className="absolute inset-0 h-full w-full animate-spin-slow"
