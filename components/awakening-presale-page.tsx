@@ -11,6 +11,43 @@ export function AwakeningPresalePage() {
     <main className="relative min-h-screen flex flex-col items-center px-6 pb-32">
       <AwakeningPresaleShader />
 
+      <a
+        href="https://play.edgeofthe.world"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Play the Edge of the World game"
+        className="group fixed right-5 top-5 z-20 flex size-32 items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-[#a78bd8] via-[#6b4fa0] to-[#3d2f5c] shadow-xl shadow-[#3d2f5c]/40 transition-transform duration-300 animate-bounce-slow hover:scale-105 md:right-8 md:top-8 md:size-40"
+      >
+        <svg
+          viewBox="0 0 100 100"
+          className="absolute inset-0 h-full w-full animate-spin-slow"
+          aria-hidden="true"
+        >
+          <defs>
+            <path
+              id="edge-game-circle-path"
+              d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"
+              fill="none"
+            />
+          </defs>
+          <text
+            className="font-mono uppercase"
+            fontSize="11"
+            fontWeight="700"
+            letterSpacing="0.5"
+            fill="white"
+          >
+            <textPath href="#edge-game-circle-path" startOffset="0%">
+              PLAY THE EDGE OF THE WORLD GAME &#8226;
+            </textPath>
+          </text>
+        </svg>
+        <span
+          className="relative ml-1.5 border-y-[15px] border-y-transparent border-l-[24px] border-l-white drop-shadow-md transition-transform duration-300 group-hover:scale-110 md:border-y-[18px] md:border-l-[28px]"
+          aria-hidden="true"
+        />
+      </a>
+
       {/* Title and buttons at top */}
       <header className="relative z-10 flex flex-col items-center justify-center flex-1 gap-6 pb-8 pt-24">
         {/* North America Tour Button */}
