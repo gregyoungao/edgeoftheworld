@@ -1,11 +1,34 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { AwakeningPresaleShader } from "@/components/awakening-presale-shader"
 import { JournalModalV2 } from "@/components/journal-modal-v2"
 
 export function AwakeningPresalePage() {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isPlayButtonHidden, setIsPlayButtonHidden] = useState(false)
+
+  useEffect(() => {
+    const mobileQuery = window.matchMedia("(max-width: 767px)")
+    let lastScrollY = window.scrollY
+
+    const handleScroll = () => {
+      if (!mobileQuery.matches) {
+        setIsPlayButtonHidden(false)
+        return
+      }
+      const currentScrollY = window.scrollY
+      if (currentScrollY > lastScrollY && currentScrollY > 40) {
+        setIsPlayButtonHidden(true)
+      } else if (currentScrollY < lastScrollY) {
+        setIsPlayButtonHidden(false)
+      }
+      lastScrollY = currentScrollY
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
     <main className="relative min-h-screen flex flex-col items-center px-6 pb-32">
@@ -39,13 +62,15 @@ export function AwakeningPresalePage() {
         </div>
       </header>
 
-      {/* Game button between the journal entry and Spotify embed */}
+      {/* Game button, fixed to the top-right corner */}
       <a
         href="https://play.edgeofthe.world"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Play the Edge of the World game"
-        className="group relative z-10 my-4 flex size-32 shrink-0 items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-[#a78bd8] via-[#6b4fa0] to-[#3d2f5c] shadow-xl shadow-[#3d2f5c]/40 transition-transform duration-300 animate-bounce-slow hover:scale-105 md:size-40"
+        className={`group fixed right-5 top-5 z-20 flex size-[102px] shrink-0 items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-[#a78bd8] via-[#6b4fa0] to-[#3d2f5c] shadow-xl shadow-[#3d2f5c]/40 transition-[opacity,transform] duration-300 animate-bounce-slow hover:scale-105 md:right-8 md:top-8 md:size-40 ${
+          isPlayButtonHidden ? "opacity-0 pointer-events-none" : "opacity-100"
+        }`}
       >
         <svg
           viewBox="0 0 100 100"
