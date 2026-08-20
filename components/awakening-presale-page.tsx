@@ -11,43 +11,6 @@ export function AwakeningPresalePage() {
     <main className="relative min-h-screen flex flex-col items-center px-6 pb-32">
       <AwakeningPresaleShader />
 
-      <a
-        href="https://play.edgeofthe.world"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Play the Edge of the World game"
-        className="group fixed right-5 top-5 z-20 flex size-32 items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-[#a78bd8] via-[#6b4fa0] to-[#3d2f5c] shadow-xl shadow-[#3d2f5c]/40 transition-transform duration-300 animate-bounce-slow hover:scale-105 md:right-8 md:top-8 md:size-40"
-      >
-        <svg
-          viewBox="0 0 100 100"
-          className="absolute inset-0 h-full w-full animate-spin-slow"
-          aria-hidden="true"
-        >
-          <defs>
-            <path
-              id="edge-game-circle-path"
-              d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"
-              fill="none"
-            />
-          </defs>
-          <text
-            className="font-mono uppercase"
-            fontSize="11"
-            fontWeight="700"
-            letterSpacing="0.5"
-            fill="white"
-          >
-            <textPath href="#edge-game-circle-path" startOffset="0%">
-              PLAY THE EDGE OF THE WORLD GAME &#8226;
-            </textPath>
-          </text>
-        </svg>
-        <span
-          className="relative ml-1.5 border-y-[15px] border-y-transparent border-l-[24px] border-l-white drop-shadow-md transition-transform duration-300 group-hover:scale-110 md:border-y-[18px] md:border-l-[28px]"
-          aria-hidden="true"
-        />
-      </a>
-
       {/* Title and buttons at top */}
       <header className="relative z-10 flex flex-col items-center justify-center flex-1 gap-6 pb-8 pt-24">
         {/* North America Tour Button */}
@@ -76,6 +39,38 @@ export function AwakeningPresalePage() {
         </div>
       </header>
 
+      {/* Game button between the journal entry and Spotify embed */}
+      <a
+        href="https://play.edgeofthe.world"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Play the Edge of the World game"
+        className="group relative z-10 my-4 flex size-32 shrink-0 items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-[#a78bd8] via-[#6b4fa0] to-[#3d2f5c] shadow-xl shadow-[#3d2f5c]/40 transition-transform duration-300 animate-bounce-slow hover:scale-105 md:size-40"
+      >
+        <svg
+          viewBox="0 0 100 100"
+          className="absolute inset-0 h-full w-full animate-spin-slow"
+          aria-hidden="true"
+        >
+          <defs>
+            <path
+              id="edge-game-circle-path"
+              d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"
+              fill="none"
+            />
+          </defs>
+          <text className="font-mono uppercase" fontSize="11" fontWeight="700" letterSpacing="0.5" fill="white">
+            <textPath href="#edge-game-circle-path" startOffset="0%">
+              PLAY THE EDGE OF THE WORLD GAME &#8226;
+            </textPath>
+          </text>
+        </svg>
+        <span
+          className="relative ml-1.5 border-y-[15px] border-y-transparent border-l-[24px] border-l-white drop-shadow-md transition-transform duration-300 group-hover:scale-110 md:border-y-[18px] md:border-l-[28px]"
+          aria-hidden="true"
+        />
+      </a>
+
       {/* Spotify embed in center */}
       <section className="relative z-10 flex items-center justify-center w-full max-w-2xl py-8">
         <iframe 
@@ -97,28 +92,40 @@ export function AwakeningPresalePage() {
           TRANSMISSION DELIVERED
         </p>
         
-        {/* Three widgets side by side */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+        {/* Four widgets in a responsive 2x2 arrangement */}
+        <div className="grid w-full max-w-[636px] grid-cols-1 items-center justify-items-center gap-6 md:grid-cols-2">
+          {/* Edge of the World widget */}
+          <iframe
+            title="Edge of the World music widget"
+            width="300"
+            height="250"
+            src="https://blanke.ffm.to/edgeoftheworld/widget?width=300&height=250&note="
+            className="rounded-lg"
+          />
+
           {/* Awakening widget */}
-          <iframe 
-            width="300" 
-            height="250" 
+          <iframe
+            title="Awakening music widget"
+            width="300"
+            height="250"
             src="https://edgeoftheworld.ffm.to/awakening/widget?width=300&height=250&note="
             className="rounded-lg"
           />
-          
+
           {/* Skyfire widget */}
-          <iframe 
-            width="300" 
-            height="250" 
+          <iframe
+            title="Skyfire music widget"
+            width="300"
+            height="250"
             src="https://edgeoftheworld.ffm.to/skyfire/widget?width=300&height=250&note="
             className="rounded-lg"
           />
-          
-          {/* Original exodus widget */}
-          <iframe 
-            width="300" 
-            height="250" 
+
+          {/* Exodus widget */}
+          <iframe
+            title="Exodus music widget"
+            width="300"
+            height="250"
             src="https://edgeoftheworld.ffm.to/exodus/widget?width=300&height=250&note="
             className="rounded-lg"
           />
